@@ -1,0 +1,51 @@
+{
+  "name": "rsvp-clipboard",
+  "title": "RSVP Clipboard",
+  "description": "Read, summarize, quiz, and diagram the latest clipboard text in a large, resizable window.",
+  "icon": "icon.png",
+  "author": "local",
+  "license": "MIT",
+  "version": "1.0.0",
+  "platforms": ["macOS"],
+  "categories": ["Productivity"],
+  "type": "module",
+  "scripts": {
+    "build:reader": "node scripts/build-reader-app.mjs",
+    "test": "python3 -m unittest discover -s tests -v && node --test tests/prompt-file.test.js && bash tests/run-swift-tests.sh",
+    "predev": "npm run build:reader",
+    "dev": "ray develop",
+    "prebuild": "npm run build:reader",
+    "build": "ray build"
+  },
+  "dependencies": {
+    "@raycast/api": "^2.5.1"
+  },
+  "commands": [
+    {
+      "name": "rsvp-clipboard",
+      "title": "RSVP Clipboard",
+      "description": "Read copied text; use s for a summary, q for a quiz, f for a browser diagram, and h/j/k/l to control reading.",
+      "mode": "no-view",
+      "preferences": [
+        {
+          "name": "wordsPerMinute",
+          "title": "読み上げ速度 (WPM)",
+          "description": "30〜1200の整数を設定します。変更は次回の起動から反映されます。",
+          "type": "textfield",
+          "required": false,
+          "default": "300",
+          "placeholder": "300"
+        },
+        {
+          "name": "llmCommand",
+          "title": "要約コマンド",
+          "description": "Claude Code互換コマンドの実行ファイル名または絶対パスです。",
+          "type": "textfield",
+          "required": false,
+          "default": "claude2",
+          "placeholder": "claude2"
+        }
+      ]
+    }
+  ]
+}
