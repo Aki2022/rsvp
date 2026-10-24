@@ -5,10 +5,5 @@ dist/
 raycast-env.d.ts
 /assets/RSVPReader.app/
 
-# Local planning notes are kept out of the public source tree.
-docs/00_index.md
-docs/adrs/
-docs/issues/
-docs/log/
-docs/specs/
-docs/workstreams/
+# Not published: kept outside the repository.
+docs/issues/ISSUE-20261019-github-commit-cache-purge.md
