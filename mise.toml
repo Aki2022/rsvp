@@ -1,0 +1,8 @@
+# setup and verify for reinstall's post:project-restore (and anyone starting fresh).
+[tasks.setup]
+description = "Install the locked npm dependencies"
+run = "npm ci"
+
+[tasks.verify]
+description = "Run the Python, Node and Swift tests"
+run = "npm test"

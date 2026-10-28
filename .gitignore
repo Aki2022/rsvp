@@ -7,3 +7,4 @@ raycast-env.d.ts
 
 # Not published: kept outside the repository.
 docs/issues/ISSUE-20261019-github-commit-cache-purge.md
+__pycache__/
